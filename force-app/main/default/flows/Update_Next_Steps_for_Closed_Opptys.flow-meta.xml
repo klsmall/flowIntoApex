@@ -77,7 +77,7 @@
     <interviewLabel>Update Next Steps for Closed Opptys {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Update Next Steps for Closed Opptys</label>
     <loops>
-        <description>This element loops through all closed opportunities.</description>
+        <description>Loop through the closed opportunities and update the NextStep field</description>
         <name>Closed_Opportunity_Loop</name>
         <label>Closed Opportunity Loop</label>
         <locationX>176</locationX>
@@ -111,7 +111,7 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <description>This element queries all closed opportunities.</description>
+        <description>Get a list of closed opportunities</description>
         <name>Get_All_Closed_Opportunities</name>
         <label>Get All Closed Opportunities</label>
         <locationX>176</locationX>
@@ -133,6 +133,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <description>Update the opportunities</description>
         <name>Update_Closed_Opportunities</name>
         <label>Update Closed Opportunities</label>
         <locationX>176</locationX>
@@ -148,6 +149,7 @@
     </start>
     <status>Draft</status>
     <variables>
+        <description>Holds the updated opportunities</description>
         <name>UpdatedOpportunities</name>
         <dataType>SObject</dataType>
         <isCollection>true</isCollection>
