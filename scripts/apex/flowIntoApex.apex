@@ -12,12 +12,17 @@ List<Opportunity> updatedOpptys = new List<Opportunity>();
 for(Opportunity oppty : closedOpptys) {
     if(oppty.IsWon) {
         oppty.NextStep = 'Nurture and upsell';
-        updatedOpptys.add(oppty);
-    } else {
-       oppty.NextStep = 'Reach out to client for feedback';
-         updatedOpptys.add(oppty);
+    } 
+    else {
+        oppty.NextStep = 'Reach out to client for feedback';
     }
+    updatedOpptys.add(oppty);
 }
 
 // update the opportunities
-update updatedOpptys;
+try {
+    update updatedOpptys;
+}
+catch(DmlException dmlError) {
+    System.debug('The following error has occurred: ' + dmlError.getMessage());
+}
